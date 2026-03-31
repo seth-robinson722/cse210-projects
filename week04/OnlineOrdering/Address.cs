@@ -1,0 +1,29 @@
+namespace OnlineOrdering
+{
+    public class Address
+    {
+        private string _street;
+        private string _city;
+        private string _stateProvince;
+        private string _country;
+
+        public Address(string street, string city, string stateProvince, string country)
+        {
+            _street = street;
+            _city = city;
+            _stateProvince = stateProvince;
+            _country = country;
+        }
+
+        public bool IsInUSA()
+        {
+            // Simple check for USA (case-insensitive)
+            return _country.ToLower() == "usa" || _country.ToLower() == "united states";
+        }
+
+        public string GetFullAddress()
+        {
+            return $"{_street}\n{_city}, {_stateProvince}\n{_country}";
+        }
+    }
+}
